@@ -1,0 +1,6 @@
+---
+- name: Gather facts
+  hosts: server
+  tasks:
+  - debug:
+     msg: "Hello From Ansible" 
