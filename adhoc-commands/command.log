@@ -1,0 +1,95 @@
+Script started on 2023-03-28 07:54:37+0000
+]0;ec2-user@ansible-controller:~/advance-ansible/adhoc-commands[?1034h[ec2-user@ansible-controller adhoc-commands]$ ansible -m ping
+usage: ansible [-h] [--version] [-v] [-b] [--become-method BECOME_METHOD]
+               [--become-user BECOME_USER] [-K] [-i INVENTORY] [--list-hosts]
+               [-l SUBSET] [-P POLL_INTERVAL] [-B SECONDS] [-o] [-t TREE] [-k]
+               [--private-key PRIVATE_KEY_FILE] [-u REMOTE_USER]
+               [-c CONNECTION] [-T TIMEOUT]
+               [--ssh-common-args SSH_COMMON_ARGS]
+               [--sftp-extra-args SFTP_EXTRA_ARGS]
+               [--scp-extra-args SCP_EXTRA_ARGS]
+               [--ssh-extra-args SSH_EXTRA_ARGS] [-C] [--syntax-check] [-D]
+               [-e EXTRA_VARS] [--vault-id VAULT_IDS]
+               [--ask-vault-pass | --vault-password-file VAULT_PASSWORD_FILES]
+               [-f FORKS] [-M MODULE_PATH] [--playbook-dir BASEDIR]
+               [-a MODULE_ARGS] [-m MODULE_NAME]
+               pattern
+ansible: error: too few arguments
+]0;ec2-user@ansible-controller:~/advance-ansible/adhoc-commands[ec2-user@ansible-controller adhoc-commands]$ ansible -m ping all
+[1;35m[WARNING]: Platform linux on host 172.31.48.53 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change this. See[0m
+[1;35mhttps://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.[0m
+[0;32m172.31.48.53 | SUCCESS => {[0m
+[0;32m    "ansible_facts": {[0m
+[0;32m        "discovered_interpreter_python": "/usr/bin/python"[0m
+[0;32m    }, [0m
+[0;32m    "changed": false, [0m
+[0;32m    "ping": "pong"[0m
+[0;32m}[0m
+[1;35m[WARNING]: Platform linux on host 172.31.82.14 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change this. See[0m
+[1;35mhttps://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.[0m
+[0;32m172.31.82.14 | SUCCESS => {[0m
+[0;32m    "ansible_facts": {[0m
+[0;32m        "discovered_interpreter_python": "/usr/bin/python"[0m
+[0;32m    }, [0m
+[0;32m    "changed": false, [0m
+[0;32m    "ping": "pong"[0m
+[0;32m}[0m
+]0;ec2-user@ansible-controller:~/advance-ansible/adhoc-commands[ec2-user@ansible-controller adhoc-commands]$ ansible -m ping all[K[K[Kserver
+[1;35m[WARNING]: Platform linux on host 172.31.48.53 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change this. See[0m
+[1;35mhttps://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.[0m
+[0;32m172.31.48.53 | SUCCESS => {[0m
+[0;32m    "ansible_facts": {[0m
+[0;32m        "discovered_interpreter_python": "/usr/bin/python"[0m
+[0;32m    }, [0m
+[0;32m    "changed": false, [0m
+[0;32m    "ping": "pong"[0m
+[0;32m}[0m
+[1;35m[WARNING]: Platform linux on host 172.31.82.14 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change this. See[0m
+[1;35mhttps://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.[0m
+[0;32m172.31.82.14 | SUCCESS => {[0m
+[0;32m    "ansible_facts": {[0m
+[0;32m        "discovered_interpreter_python": "/usr/bin/python"[0m
+[0;32m    }, [0m
+[0;32m    "changed": false, [0m
+[0;32m    "ping": "pong"[0m
+[0;32m}[0m
+]0;ec2-user@ansible-controller:~/advance-ansible/adhoc-commands[ec2-user@ansible-controller adhoc-commands]$ ansible -m ping server[K[K[K[K[K[K[K[K[K[K[K[K[Ka ``c`a`t` `/`e`t`c`/`*`r`e`l`e`a`s`e`*`[C server
+usage: ansible [-h] [--version] [-v] [-b] [--become-method BECOME_METHOD]
+               [--become-user BECOME_USER] [-K] [-i INVENTORY] [--list-hosts]
+               [-l SUBSET] [-P POLL_INTERVAL] [-B SECONDS] [-o] [-t TREE] [-k]
+               [--private-key PRIVATE_KEY_FILE] [-u REMOTE_USER]
+               [-c CONNECTION] [-T TIMEOUT]
+               [--ssh-common-args SSH_COMMON_ARGS]
+               [--sftp-extra-args SFTP_EXTRA_ARGS]
+               [--scp-extra-args SCP_EXTRA_ARGS]
+               [--ssh-extra-args SSH_EXTRA_ARGS] [-C] [--syntax-check] [-D]
+               [-e EXTRA_VARS] [--vault-id VAULT_IDS]
+               [--ask-vault-pass | --vault-password-file VAULT_PASSWORD_FILES]
+               [-f FORKS] [-M MODULE_PATH] [--playbook-dir BASEDIR]
+               [-a MODULE_ARGS] [-m MODULE_NAME]
+               pattern
+ansible: error: unrecognized arguments: VERSION="2" ID="amzn" ID_LIKE="centos rhel fedora" VERSION_ID="2" PRETTY_NAME="Amazon Linux 2" ANSI_COLOR="0;33" CPE_NAME="cpe:2.3:o:amazon:amazon_linux:2" HOME_URL="https://amazonlinux.com/" Amazon Linux release 2 (Karoo) cpe:2.3:o:amazon:amazon_linux:2 server
+]0;ec2-user@ansible-controller:~/advance-ansible/adhoc-commands[ec2-user@ansible-controller adhoc-commands]$ ansible -a `cat /etc/*release*` server[1P server' server[1P[1@'
+[1;35m[WARNING]: Platform linux on host 172.31.48.53 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change this. See[0m
+[1;35mhttps://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.[0m
+[0;31m172.31.48.53 | FAILED | rc=1 >>[0m
+[0;31mcat: /etc/*release*: No such file or directorynon-zero return code[0m
+[1;35m[WARNING]: Platform linux on host 172.31.82.14 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change this. See[0m
+[1;35mhttps://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.[0m
+[0;31m172.31.82.14 | FAILED | rc=1 >>[0m
+[0;31mcat: /etc/*release*: No such file or directorynon-zero return code[0m
+]0;ec2-user@ansible-controller:~/advance-ansible/adhoc-commands[ec2-user@ansible-controller adhoc-commands]$ ansible -a 'cat /etc/*release*' server[C[C[1P[1P[1P[1P[1P[1P[1P[1P[1P[1@h[1@o[1@s[1@t[1@s
+[1;35m[WARNING]: Platform linux on host 172.31.48.53 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change this. See[0m
+[1;35mhttps://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.[0m
+[0;33m172.31.48.53 | CHANGED | rc=0 >>[0m
+[0;33m127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4[0m
+[0;33m::1         localhost6 localhost6.localdomain6[0m
+[1;35m[WARNING]: Platform linux on host 172.31.82.14 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change this. See[0m
+[1;35mhttps://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.[0m
+[0;33m172.31.82.14 | CHANGED | rc=0 >>[0m
+[0;33m127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4[0m
+[0;33m::1         localhost6 localhost6.localdomain6[0m
+]0;ec2-user@ansible-controller:~/advance-ansible/adhoc-commands[ec2-user@ansible-controller adhoc-commands]$ exit
+exit
+
+Script done on 2023-03-28 07:57:02+0000
